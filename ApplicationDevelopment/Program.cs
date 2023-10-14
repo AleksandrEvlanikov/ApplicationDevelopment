@@ -60,7 +60,8 @@
 
                 foreach (FamilyMember c in husband.children)
                 {
-                    Console.WriteLine($"{indentation.indentation60}{indentation.indentation10}Ребенок - {c.Name} пол: {c.gender}\n {indentation.indentation80}{indentation.indentation10}Родитель: {husband.Name}");
+                    Console.WriteLine($"{indentation.indentation60}{indentation.indentation10}Ребенок - {c.Name} пол: {c.gender}\n " +
+                        $"{indentation.indentation80}{indentation.indentation10}Родитель: {husband.Name}");
                 }
             }
             else
@@ -77,7 +78,8 @@
                 }
                 else
                 {
-                    Console.WriteLine($"{indentation.indentation60}{indentation.indentation10}Ребенок - {c.Name} пол: {c.gender}\n {indentation.indentation80}{indentation.indentation10}Родитель: {wife.Name} ");
+                    Console.WriteLine($"{indentation.indentation60}{indentation.indentation10}Ребенок - {c.Name} пол: {c.gender}\n " +
+                        $"{indentation.indentation80}{indentation.indentation10}Родитель: {wife.Name} ");
 
                 }
 
@@ -87,7 +89,8 @@
             if (anotherMarriage != null)
             {
                 Console.WriteLine($"{indentation.indentation60}{indentation.indentation20}Ребенок от другого брака: {wife.Name}");
-                Console.WriteLine($"{indentation.indentation60}{indentation.indentation10}Ребенок - {anotherMarriage.Name} пол: {anotherMarriage.gender}\n {indentation.indentation80}{indentation.indentation10}Родитель: {wife.Name} ");
+                Console.WriteLine($"{indentation.indentation60}{indentation.indentation10}Ребенок - {anotherMarriage.Name} пол: {anotherMarriage.gender}\n" +
+                    $" {indentation.indentation80}{indentation.indentation10}Родитель: {wife.Name} ");
 
             }
 
