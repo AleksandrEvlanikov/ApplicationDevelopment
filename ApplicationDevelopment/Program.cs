@@ -28,12 +28,14 @@
 
             foreach (FamilyMember c in wife0.children)
             {
-                Console.WriteLine($"{indentation.indentation20}{indentation.indentation10}Ребенок - {c.Name} пол: {c.gender}\n {indentation.indentation40}{indentation.indentation10}Родитель: {wife0.Name} ");
+                Console.WriteLine($"{indentation.indentation20}{indentation.indentation10}Ребенок - {c.Name} пол: {c.gender}\n " +
+                    $"{indentation.indentation40}{indentation.indentation10}Родитель: {wife0.Name} ");
             }
 
             foreach (FamilyMember c in husband0.children)
             {
-                Console.WriteLine($"{indentation.indentation20}{indentation.indentation10}Ребенок - {c.Name} пол: {c.gender}\n {indentation.indentation40}{indentation.indentation10}Родитель: {husband0.Name}");
+                Console.WriteLine($"{indentation.indentation20}{indentation.indentation10}Ребенок - {c.Name} пол: {c.gender}\n " +
+                    $"{indentation.indentation40}{indentation.indentation10}Родитель: {husband0.Name}");
             }
 
 
