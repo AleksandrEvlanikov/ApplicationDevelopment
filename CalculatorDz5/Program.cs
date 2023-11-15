@@ -5,19 +5,24 @@ namespace CalculatorDz5
     internal class Program
     {
 
+    // Доработайте класс калькулятора способным работать как с целочисленными так и с дробными числами.
+    // (возможно стоит задействовать перегрузку операций).
+    // заменить Convert.ToDouble на собственный DoubleTryPars и обрабатываем ошибку
+    // проверить что введенное число небыло отрицательное (вывести ошибку Exeption , отловить Catch)
+    // сумма не может быть отрицательной (при делении и вычитании)
+
         delegate void myDelegate(string message);
+
         private static void Main(string[] args)
         {
-            var calc = new Calc();
-            calc.MyEventHandler += Calc_MyEventHandler;
-            
-            Console.Write("Введите 1 число: ");
-            double ResultInput = double.Parse(Console.ReadLine());
-            calc.Result = ResultInput;
-            Console.Write("Введите 2 число: ");
-            int x = int.Parse(Console.ReadLine());
 
-            
+            var calc = new Calc();
+            var inputNum = new InputNum();
+            calc.MyEventHandler += Calc_MyEventHandler;
+
+            calc.Result = inputNum.InputNumOne();
+            double x = inputNum.InputNumTwo();
+
 
             bool exitCalc = true;
             while(exitCalc == true)
@@ -57,15 +62,6 @@ namespace CalculatorDz5
             }
 
 
-            //calc.Sum(10);
-            //calc.Sub(1);
-            //calc.Multy(5);
-            //calc.Divide(3);
-            //calc.CancelLast();
-            //calc.CancelLast();
-            //calc.CancelLast();
-            //calc.CancelLast();
-            //calc.CancelLast();
         }
 
         private static void Calc_MyEventHandler(object? sender, EventArgs e)

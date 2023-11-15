@@ -13,6 +13,7 @@ namespace CalculatorDz5
         //private Stack<double> LastResult { get; set; } = new Stack<double>();
         
         public event EventHandler<EventArgs> MyEventHandler;
+        //InputNum inputNum = new InputNum();
 
         private void PrintResult()
         {
@@ -21,28 +22,48 @@ namespace CalculatorDz5
 
         
 
-        public void Divide(int x)
+        public void Divide(double x)
         {
             Result /= x;
             PrintResult();
             //LastResult.Push(Result);
         }
 
-        public void Multy(int x)
+        public void Multy(double x)
         {
             Result *= x;
             PrintResult();
             //LastResult.Push(Result);
         }
 
-        public void Sub(int x)
+        public void Sub(double x)
         {
-            Result -= x;
-            PrintResult();
+            try
+            {
+                
+                if (Result - x < 0)
+                {
+                    Console.WriteLine("Результат не может быть отрицательный.");
+                    Console.WriteLine("Попробуйте еще раз. ");
+
+                }
+                else
+                {
+                    Result -= x;
+                    PrintResult();
+                }
+
+            }
+            catch(InputNumMinusExeption e)
+            {
+                Console.WriteLine($"Результат {Result} " + e.Message);
+            }
+
+            
             //LastResult.Push(Result);
         }
 
-        public void Sum(int x)
+        public void Sum(double x)
         {
             Result += x;
             PrintResult();
@@ -50,7 +71,21 @@ namespace CalculatorDz5
         }
 
 
+        public bool DoubleTryPars(string input, out double num)
+        {
+            num = 0;
+            try
+            {
+                num = Convert.ToDouble(input);
 
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine("Неверный формат ввода -> " + e);
+                return false;
+            }
+            return true;
+        }
 
         //public void CancelLast()
         //{
